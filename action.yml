@@ -1,0 +1,20 @@
+name: ''
+description: ''
+# branding:
+#   icon: ''
+#   color: ''
+inputs:
+  foo:
+    description: 'bar'
+    required: true
+outputs:
+  version:
+    description: ''
+    value: ${{ steps.foo.outputs.bar }}
+runs:
+  using: 'composite'
+  steps:
+    - id: foo
+      shell: bash
+      run: |
+        echo "bar=fizz" >> $GITHUB_OUTPUT
